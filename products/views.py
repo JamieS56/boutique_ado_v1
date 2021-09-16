@@ -55,8 +55,6 @@ def all_products(request):
         'current_sorting': current_sorting,
     }
 
-    print(Product.objects.all())
-
     return render(request, 'products/products.html', context)
 
 

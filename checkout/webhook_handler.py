@@ -6,6 +6,7 @@ from products.models import Product
 import json
 import time
 
+
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
 
@@ -25,6 +26,7 @@ class StripeWH_Handler:
         Handle the payment_intent.succeeded webhook from Stripe
         """
         intent = event.data.object
+        print(intent)
         pid = intent.id
         bag = intent.metadata.bag
         save_info = intent.metadata.save_info
